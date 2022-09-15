@@ -9,8 +9,8 @@ const Dog = () => {
         getRandomDog()
     },[])
 
-    const getRandomDog = () =>{
-        axios.get("https://dog.ceo/api/breeds/image/random")
+    const getRandomDog = async () =>{
+        await axios.get("https://dog.ceo/api/breeds/image/random")
         .then(response =>{
             setDogImg(response.data.message)
         }).catch(err =>{
